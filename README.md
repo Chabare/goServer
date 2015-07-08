@@ -1,3 +1,3 @@
 # htdocs
 Current location:
-  http://www.chabare.de/new
+  http://new.chabare.de
