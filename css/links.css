@@ -2,7 +2,11 @@ a {
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 18px;
+    font-size: 20pt;
+    font-weight: 600;
+
+    font-family: impact;
+    letter-spacing: 1.2px;
 }
 
 a:hover {
