@@ -1,0 +1,80 @@
+h1 {
+    text-align: center;
+}
+
+h1.first {
+    color: #100;
+}
+
+h1.first.active {
+    color: #EFF;
+}
+
+h1.second {
+    color: #210;
+}
+
+h1.second.active {
+    color: #DEF;
+}
+
+h1.third {
+    color: #321;
+}
+
+h1.third.active {
+    color: #CDE;
+}
+
+h1.fourth {
+    color: #432;
+}
+
+h1.fourth.active {
+    color: #BCD;
+}
+
+h1.fifth {
+    color: #543;
+}
+
+h1.fifth.active {
+    color: #ABC;
+}
+
+h1.sixth {
+    color: #654;
+}
+
+h1.sixth.active {
+    color: #9AB;
+}
+
+h1.seventh {
+    color: #765;
+}
+
+h1.seventh.active {
+    color: #89A;
+}
+
+h1.eigth {
+    color: #876;
+}
+
+h1.eigth.active {
+    color: #789;
+}
+
+h1.ninth {
+    color: #987;
+}
+
+h1.ninth.active {
+    color: #678;
+}
+
+/* Currently selected */
+.active {
+    color: #f00;
+}
