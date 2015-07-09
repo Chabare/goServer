@@ -1,6 +1,7 @@
 body {
     padding-top: 2%;
-    background-color: #ccc;
+
+    background: #888 url('http://www.chabare.de/img/background.png') center center;
 }
 
 .category {

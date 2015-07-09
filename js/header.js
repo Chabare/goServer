@@ -28,8 +28,6 @@ var colorLinks = function() {
     $('a').each(function() {
         $(this).css('color', $(this).siblings().css('color'));
     });
-
-    $('body').css('background-image', 'url(\'http://rpi.eowqofhvla66ahgq.myfritz.net/gruende/img/background.png\')');
 }
 
 var textShadowHeaders = function() {
