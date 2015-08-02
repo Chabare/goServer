@@ -1,8 +1,8 @@
 var getLinks = function() {
     return [
-        'http://bitbucket.com/',
         'http://www.drive.google.com/',
-        'http://github.com',
+        'http://github.com/chabare',
+        'http://oc.chabare.de',
         'http://www.animehaven.org/',
         'http://www.crunchyroll.com/home/queue',
         'http://myanimelist.net/animelist/chabare',
@@ -32,9 +32,9 @@ var getLinks = function() {
 
 var getLinkNames = function() {
     return [
-        'BitBucket',
         'Drive',
         'Github',
+        'OwnCloud',
         'Animehaven',
         'Crunchyroll',
         'MyAnimeList',
