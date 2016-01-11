@@ -1,82 +1,112 @@
-h1 {
-    text-align: center;
-    font-size: 30pt;
-    font-weight: 700;
+#catHeaderC1R1, #catHeaderC1R2, #catHeaderC1R3, #catHeaderC2R1, #catHeaderC2R2, #catHeaderC2R3, #catHeaderC3R1, #catHeaderC3R2, #catHeaderC3R3 {
+	display:block;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:30pt;
+}
+/**/
+
+
+/*Start first column*/
+#catHeaderC1R1 {
+	color:#977;
+	transition:color .5s ease-in;
 }
 
-h1.first {
-    color: #100;
+#catHeaderC1R1:hover {
+	color:#C77;
+	opacity:1;
 }
 
-h1.first.active {
-    color: #EFF;
+/**/
+#catHeaderC1R2 {
+	color:#977;
+	transition:color .5s ease-in;
 }
 
-h1.second {
-    color: #210;
+#catHeaderC1R2:hover {
+	color:#C77;
+	opacity:1;
 }
 
-h1.second.active {
-    color: #DEF;
+/**/
+#catHeaderC1R3 {
+	color:#977;
+	transition:color .5s ease-in;
 }
 
-h1.third {
-    color: #321;
+#catHeaderC1R3:hover {
+	color:#C77;
+	opacity:1;
+}
+/**/
+
+
+/*Start second column*/
+#catHeaderC2R1 {
+	color:#797;
+	transition:color .5s ease-in;
 }
 
-h1.third.active {
-    color: #CDE;
+#catHeaderC2R1:hover {
+	color:#7C7;
+	opacity:1;
 }
 
-h1.fourth {
-    color: #432;
+/**/
+#catHeaderC2R2 {
+	color:#797;
+	transition:color .5s ease-in;
 }
 
-h1.fourth.active {
-    color: #BCD;
+#catHeaderC2R2:hover {
+	color:#7C7;
+	opacity:1;
 }
 
-h1.fifth {
-    color: #543;
+/**/
+#catHeaderC2R3 {
+	color:#797;
+	transition:color .5s ease-in;
 }
 
-h1.fifth.active {
-    color: #ABC;
+#catHeaderC2R3:hover {
+	color:#7C7;
+	opacity:1;
+}
+/**/
+
+
+/*Start third column*/
+#catHeaderC3R1 {
+	color:#779;
+	transition:color .5s ease-in;
 }
 
-h1.sixth {
-    color: #654;
+#catHeaderC3R1:hover {
+	color:#77C;
+	opacity:1;
 }
 
-h1.sixth.active {
-    color: #9AB;
+/**/
+#catHeaderC3R2 {
+	color:#779;
+	transition:color .5s ease-in;
 }
 
-h1.seventh {
-    color: #765;
+/**/
+#catHeaderC3R2:hover {	
+	color:#77C;
+	opacity:1;
 }
 
-h1.seventh.active {
-    color: #89A;
+/**/
+#catHeaderC3R3 {
+	color:#779;
+	transition:color .5s ease-in;
 }
 
-h1.eigth {
-    color: #876;
-}
-
-h1.eigth.active {
-    color: #789;
-}
-
-h1.ninth {
-    color: #987;
-}
-
-h1.ninth.active {
-    color: #678;
-}
-
-/* Currently selected */
-.active {
-    color: #f00;
+#catHeaderC3R3:hover {
+	color:#77C;
+	opacity:1;
 }
