@@ -35,7 +35,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 			return i / j
 		},
 	}
-	t := template.Must(template.New("index.html").Funcs(funcMap).ParseFiles(filepath.Join("server/", "templates/", "index")+".html", "server/templates/weather.tpl"))
+	t := template.Must(template.New("index.html").Funcs(funcMap).ParseFiles(filepath.Join("resources/", "templates/", "index")+".html", "resources/templates/weather.tpl"))
 
 	loc := getLocation(net.ParseIP(r.RemoteAddr))
 

@@ -42,7 +42,7 @@ type Header struct {
 func ReadLinkList() []Header {
 	header := make([]Header, 9, 9)
 
-	lines := getLines("server/links")
+	lines := getLines("resources/links")
 
 	headerCount := -1
 	var linkCount int

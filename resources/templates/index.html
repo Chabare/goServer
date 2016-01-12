@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>{{.Title}}</title>
+        <meta name="author" content="chabare">
+        <meta charset="utf-8">
+        {{range $cssFile := .CSSFiles}}
+        <link rel="stylesheet" href="/css/{{$cssFile}}.css" type="text/css">{{end}}
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    </head>
+    <body>{{$parent := .}}
+        {{range $index, $header := .Header}}{{$modResult := mod $index 3}}
+            {{if eq $modResult 0}}{{$indexDiv := divExact $index 3}}
+            <div id="{{if eq $indexDiv 0}}first{{else}}{{if eq $indexDiv 1}}second{{else}}third{{end}}{{end}}C">{{end}}
+                <div class="{{if eq $modResult 0}}first{{else}}{{if eq $modResult 1}}second{{else}}third{{end}}{{end}}Row">{{$colIndex := div $index 3 | inc}}{{$rowIndex := inc $modResult}}
+                    <h1 id="catHeaderC{{$colIndex}}R{{$rowIndex}}">{{$header.Name}}</h1>{{/*
+                    */}}{{range $link := $header.Links}}
+                        <a class="catLinkC{{$colIndex}}R{{$rowIndex}}" href="{{$link.URL}}">{{$link.Name}}</a>{{end}}
+                </div>
+            {{if eq $modResult 2}}
+            {{if eq $colIndex 2}}
+                {{template "weather" $parent}}
+            {{end}}
+            </div>
+            {{end}}{{end}}
+    </body>
+</html>

@@ -12,5 +12,5 @@ func ViewHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Replace new lines with break tag
 	// page.Body = []byte(strings.Replace(string(page.Body), string([]byte{13}), "<br>", 1024))
-	renderTemplate(w, "view", page)
+	renderTemplate(w, "view.html", page)
 }

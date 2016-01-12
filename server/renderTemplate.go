@@ -8,7 +8,7 @@ import (
 )
 
 func renderTemplate(w http.ResponseWriter, tmpl string, page *Page) {
-	t, err := template.ParseFiles(filepath.Join("server/", "templates/", tmpl) + ".html")
+	t, err := template.ParseFiles(filepath.Join("resources/", "templates/", tmpl))
 
 	if err != nil {
 		log.Println(err)

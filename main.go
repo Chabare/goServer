@@ -10,13 +10,17 @@ import (
 )
 
 func main() {
+	// Single files
+	serveSingle("/favicon.ico", "./favicon.ico")
+	// Handlers
 	http.HandleFunc("/css/", server.ViewHandler)
 	http.HandleFunc("/img/", server.ViewHandler)
-	serveSingle("/favicon.ico", "./favicon.ico")
+	http.HandleFunc("/abgabe/", server.HandinHandler)
 	http.HandleFunc("/", server.IndexHandler)
 	http.HandleFunc("/edit/", server.EditHandler)
 	http.HandleFunc("/save/", server.SaveHandler)
 
+	// Listen on default http port
 	err := http.ListenAndServe(":80", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

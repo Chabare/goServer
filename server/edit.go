@@ -10,5 +10,5 @@ func EditHandler(w http.ResponseWriter, r *http.Request) {
 		page = &Page{Title: title}
 	}
 
-	renderTemplate(w, "edit", page)
+	renderTemplate(w, "edit.html", page)
 }
