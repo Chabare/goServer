@@ -9,35 +9,6 @@ import (
 	"strings"
 )
 
-// Link TODO: Comment
-type Link struct {
-	Name string
-	URL  *url.URL
-}
-
-// ByLinkName TODO: Comment
-type ByLinkName []Link
-
-// ByHeaderName TODO: Comment
-type ByHeaderName []Header
-
-func (links ByLinkName) Len() int      { return len(links) }
-func (links ByLinkName) Swap(i, j int) { links[i], links[j] = links[j], links[i] }
-func (links ByLinkName) Less(i, j int) bool {
-	return (strings.Compare(links[i].Name, links[j].Name) < 0)
-}
-func (links ByHeaderName) Len() int      { return len(links) }
-func (links ByHeaderName) Swap(i, j int) { links[i], links[j] = links[j], links[i] }
-func (links ByHeaderName) Less(i, j int) bool {
-	return (strings.Compare(links[i].Name, links[j].Name) < 0)
-}
-
-// Header TODO: Comment
-type Header struct {
-	Name  string
-	Links []Link
-}
-
 // ReadLinkList TODO: Comment
 func ReadLinkList() []Header {
 	header := make([]Header, 9, 9)
@@ -63,27 +34,13 @@ func ReadLinkList() []Header {
 }
 
 func sortHeader(header []Header) []Header {
-	hn := make(ByHeaderName, 9, 9)
-	for i, l := range header {
-		hn[i] = l
-	}
-	sorted := sortHeaderNames(hn)
-	for i := range sorted {
-		header[i] = sorted[i]
-	}
+	sortHeaderNames(header)
 
 	header = trans(header)
 
 	// Sort links in each header
 	for _, h := range header {
-		ln := make(ByLinkName, 3, 3)
-		for i, l := range h.Links {
-			ln[i] = l
-		}
-		sorted := sortLinkNames(ln)
-		for i := range sorted {
-			h.Links[i] = sorted[i]
-		}
+		sortLinkNames(h.Links)
 	}
 
 	return header
@@ -97,16 +54,12 @@ func trans(header []Header) []Header {
 	return header
 }
 
-func sortLinkNames(names ByLinkName) ByLinkName {
-	sort.Sort(names)
-
-	return names
+func sortLinkNames(names []Link) {
+	sort.Sort(ByLink{names})
 }
 
-func sortHeaderNames(names ByHeaderName) ByHeaderName {
-	sort.Sort(names)
-
-	return names
+func sortHeaderNames(names []Header) {
+	sort.Sort(ByHeader{names})
 }
 
 func getLinkNameAndURL(line string) (string, *url.URL) {
