@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -15,13 +16,18 @@ func main() {
 	// Handlers
 	http.HandleFunc("/css/", server.ViewHandler)
 	http.HandleFunc("/img/", server.ViewHandler)
+	http.HandleFunc("/resources/", server.ViewHandler)
+	http.HandleFunc("/auth/login", server.LoginHandler)
 	http.HandleFunc("/abgabe/", server.HandinHandler)
 	http.HandleFunc("/", server.IndexHandler)
 	http.HandleFunc("/edit/", server.EditHandler)
 	http.HandleFunc("/save/", server.SaveHandler)
 
+	fmt.Println("Server is running")
+	server := http.Server{}
+
 	// Listen on default http port
-	err := http.ListenAndServe(":80", nil)
+	err := server.ListenAndServeTLS("ssl/www_chabare_me.crt", "ssl/myserver.key")
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
