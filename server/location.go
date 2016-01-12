@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
-	"net"
 	"net/http"
+	"strings"
 )
 
 // Location TODO: Comment
@@ -17,11 +17,11 @@ type Location struct {
 
 // TODO: Write file with known ip -> Location mappings
 
-func getLocation(ip net.IP) Location {
+func getLocation(ip string) Location {
 	var loc Location
-	//ip = net.ParseIP("93.220.207.105")
+	cutPort(&ip)
 
-	err := json.Unmarshal(establishConnection("http://freegeoip.net/json/"+ip.String()), &loc)
+	err := json.Unmarshal(establishConnection("http://freegeoip.net/json/"), &loc)
 	if err != nil {
 		loc.Lat = 49.8695
 		loc.Lon = 8.6507
@@ -29,6 +29,10 @@ func getLocation(ip net.IP) Location {
 	}
 
 	return loc
+}
+
+func cutPort(ip *string) {
+	*ip = (*ip)[:strings.Index(*ip, ":")]
 }
 
 func establishConnection(url string) []byte {
