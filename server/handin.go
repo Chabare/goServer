@@ -10,7 +10,7 @@ import (
 
 // HandinHandler TODO: Comment
 func HandinHandler(w http.ResponseWriter, r *http.Request) {
-	names := []string{"Patrick", "Torben"}
+	names := []string{"Torben", "Patrick"}
 
 	_, weekNr := time.Now().ISOWeek()
 
