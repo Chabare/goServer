@@ -17,19 +17,19 @@ func main() {
 	http.HandleFunc("/css/", server.ViewHandler)
 	http.HandleFunc("/img/", server.ViewHandler)
 	http.HandleFunc("/resources/", server.ViewHandler)
-	http.HandleFunc("/auth/login", server.LoginHandler)
+	// http.HandleFunc("/auth/login", server.LoginHandler)
 	http.HandleFunc("/abgabe/", server.HandinHandler)
 	http.HandleFunc("/", server.IndexHandler)
 	http.HandleFunc("/edit/", server.EditHandler)
 	http.HandleFunc("/save/", server.SaveHandler)
 
 	fmt.Println("Server is running")
-	server := http.Server{}
 
+	go http.ListenAndServe(":80", nil)
 	// Listen on default http port
-	err := server.ListenAndServeTLS("ssl/www_chabare_me.crt", "ssl/myserver.key")
-	if err != nil {
-		log.Fatal("ListenAndServe: ", err)
+	httpsErr := http.ListenAndServeTLS(":443", "ssl/www_chabare_me.crt", "ssl/myserver.key", nil)
+	if httpsErr != nil {
+		log.Fatal("ListenAndServe: ", httpsErr)
 	}
 }
 
